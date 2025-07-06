@@ -22,6 +22,7 @@ func main() {
 		fmt.Fprintln(w, "pong")
 	})
 	r.Post("/shorten", handler.ShortenHandler)
+	r.Get("/{code}", handler.RedirectHandler)
 
 	addr := fmt.Sprintf(":%s", cfg.Port)
 	log.Println("Server running on", addr)

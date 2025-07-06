@@ -15,7 +15,7 @@ var DB *pgxpool.Pool
 func Init(cfg *config.Config) {
 	dsn := fmt.Sprintf(
 
-		"postgress://%s:%s@%s:%s/%s",
+		"postgres://%s:%s@%s:%s/%s",
 		cfg.DBUser,
 		cfg.DBPass,
 		cfg.DBHost,

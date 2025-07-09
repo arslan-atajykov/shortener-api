@@ -43,6 +43,7 @@ func ShortenHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(resp)
+		return
 	}
 	shortCode := service.GenerateShortCode()
 	query := `INSERT INTO urls (original_url, short_code)
